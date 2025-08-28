@@ -10,10 +10,15 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const bai1_1 = require("./bai1");
+const bai10_1 = require("./bai10");
 const bai2_1 = require("./bai2");
 const bai3_1 = require("./bai3");
 const bai4_1 = require("./bai4");
 const bai5_1 = require("./bai5");
+const bai6_1 = require("./bai6");
+const bai7_1 = require("./bai7");
+const bai8_1 = require("./bai8");
+const bai9_1 = require("./bai9");
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         // Bai 1
@@ -36,6 +41,21 @@ function main() {
         // Bai 5
         console.log('Bai 5:');
         yield (0, bai5_1.simulateTask)(1000).then((result) => console.log(result));
+        // Bai 6
+        console.log('Bai 6:');
+        yield bai6_1.parallelTasks.then((results) => console.log(results));
+        // Bai 7
+        console.log('Bai 7:');
+        yield bai7_1.raceTasks.then((result) => console.log(result));
+        // Bai 8
+        console.log('Bai 8:');
+        yield bai8_1.chainPromise.then((result) => console.log(result));
+        // Bai 9
+        console.log('Bai 9:');
+        yield bai9_1.filterEven.then((result) => console.log(result));
+        // Bai 10
+        console.log('Bai 10:');
+        yield bai10_1.finallyPromise.then((result) => console.log(result));
     });
 }
 main().catch((error) => console.error("Main error:", error));
