@@ -16,7 +16,12 @@ const bai12_1 = require("./bai12");
 const bai13_1 = require("./bai13");
 const bai14_1 = require("./bai14");
 const bai15_1 = require("./bai15");
+const bai16_1 = require("./bai16");
+const bai17_1 = require("./bai17");
+const bai18_1 = require("./bai18");
+const bai19_1 = require("./bai19");
 const bai2_1 = require("./bai2");
+const bai20_1 = require("./bai20");
 const bai3_1 = require("./bai3");
 const bai4_1 = require("./bai4");
 const bai5_1 = require("./bai5");
@@ -76,6 +81,26 @@ function main() {
         // Bai 15
         console.log('Bai 15:');
         yield (0, bai15_1.sequentialCalls)();
+        // Bai 16
+        console.log('Bai 16:');
+        yield (0, bai16_1.parallelCalls)();
+        // Bai 17
+        console.log('Bai 17:');
+        yield (0, bai17_1.iteratePromises)();
+        // Bai 18
+        console.log('Bai 18:');
+        console.log(yield (0, bai18_1.fetchUser)(1));
+        // Bai 19
+        console.log('Bai 19:');
+        console.log(yield (0, bai19_1.fetchUsers)([1, 2]));
+        // Bai 20
+        console.log('Bai 20:');
+        try {
+            console.log(yield (0, bai20_1.fetchWithTimeout)(1));
+        }
+        catch (error) {
+            console.log('Error:', error);
+        }
     });
 }
 main().catch((error) => console.error("Main error:", error));

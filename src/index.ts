@@ -5,7 +5,12 @@ import { runTask } from './bai12';
 import { handleError } from './bai13';
 import { triple } from './bai14';
 import { sequentialCalls } from './bai15';
+import { parallelCalls } from './bai16';
+import { iteratePromises } from './bai17';
+import { fetchUser } from './bai18';
+import { fetchUsers } from './bai19';
 import { getTen } from './bai2';
+import { fetchWithTimeout } from './bai20';
 import { rejectError } from './bai3';
 import { randomPromise } from './bai4';
 import { simulateTask } from './bai5';
@@ -79,6 +84,30 @@ async function main() {
   // Bai 15
   console.log('Bai 15:');
   await sequentialCalls();
+
+  // Bai 16
+  console.log('Bai 16:');
+  await parallelCalls();
+
+  // Bai 17
+  console.log('Bai 17:');
+  await iteratePromises();
+
+  // Bai 18
+  console.log('Bai 18:');
+  console.log(await fetchUser(1));
+
+  // Bai 19
+  console.log('Bai 19:');
+  console.log(await fetchUsers([1, 2]));
+
+  // Bai 20
+  console.log('Bai 20:');
+  try {
+    console.log(await fetchWithTimeout(1));
+  } catch (error) {
+    console.log('Error:', error);
+  }
 }
 
 main().catch((error) => console.error("Main error:", error));
