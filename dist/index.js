@@ -27,7 +27,12 @@ const bai22_1 = require("./bai22");
 const bai23_1 = require("./bai23");
 const bai24_1 = require("./bai24");
 const bai25_1 = require("./bai25");
+const bai26_1 = require("./bai26");
+const bai27_1 = require("./bai27");
+const bai28_1 = require("./bai28");
+const bai29_1 = require("./bai29");
 const bai3_1 = require("./bai3");
+const bai30_1 = require("./bai30");
 const bai4_1 = require("./bai4");
 const bai5_1 = require("./bai5");
 const bai6_1 = require("./bai6");
@@ -121,6 +126,26 @@ function main() {
         // Bai 23
         console.log('Bai 23:');
         console.log(yield (0, bai23_1.filterTodos)());
+        // Bai 26
+        console.log('Bai 26:');
+        yield (0, bai26_1.waitFiveSeconds)();
+        // Bai 27
+        console.log('Bai 27:');
+        try {
+            console.log(yield (0, bai27_1.fetchWithRetry)("https://jsonplaceholder.typicode.com/todos/1", 3));
+        }
+        catch (error) {
+            console.log('Error:', error);
+        }
+        // Bai 28
+        console.log('Bai 28:');
+        console.log(yield (0, bai28_1.batchProcess)());
+        // Bai 29
+        console.log('Bai 29:');
+        yield (0, bai29_1.queueProcess)();
+        // Bai 30
+        console.log('Bai 30:');
+        yield (0, bai30_1.batchCalls)();
     });
 }
 main().catch((error) => console.error("Main error:", error));

@@ -16,7 +16,12 @@ import { multipleTodos } from './bai22';
 import { filterTodos } from './bai23';
 import { postData } from './bai24';
 import { downloadFile } from './bai25';
+import { waitFiveSeconds } from './bai26';
+import { fetchWithRetry } from './bai27';
+import { batchProcess } from './bai28';
+import { queueProcess } from './bai29';
 import { rejectError } from './bai3';
+import { batchCalls } from './bai30';
 import { randomPromise } from './bai4';
 import { simulateTask } from './bai5';
 import { parallelTasks } from './bai6';
@@ -133,6 +138,30 @@ async function main() {
   // Bai 23
   console.log('Bai 23:');
   console.log(await filterTodos());
+
+  // Bai 26
+  console.log('Bai 26:');
+  await waitFiveSeconds();
+
+  // Bai 27
+  console.log('Bai 27:');
+  try {
+    console.log(await fetchWithRetry("https://jsonplaceholder.typicode.com/todos/1", 3));
+  } catch (error) {
+    console.log('Error:', error);
+  }
+
+  // Bai 28
+  console.log('Bai 28:');
+  console.log(await batchProcess());
+
+  // Bai 29
+  console.log('Bai 29:');
+  await queueProcess();
+
+  // Bai 30
+  console.log('Bai 30:');
+  await batchCalls();
 }
 
 main().catch((error) => console.error("Main error:", error));
