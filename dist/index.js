@@ -22,6 +22,11 @@ const bai18_1 = require("./bai18");
 const bai19_1 = require("./bai19");
 const bai2_1 = require("./bai2");
 const bai20_1 = require("./bai20");
+const bai21_1 = require("./bai21");
+const bai22_1 = require("./bai22");
+const bai23_1 = require("./bai23");
+const bai24_1 = require("./bai24");
+const bai25_1 = require("./bai25");
 const bai3_1 = require("./bai3");
 const bai4_1 = require("./bai4");
 const bai5_1 = require("./bai5");
@@ -101,6 +106,21 @@ function main() {
         catch (error) {
             console.log('Error:', error);
         }
+        // Bai 21
+        console.log('Bai 21:');
+        console.log(yield (0, bai21_1.getTodo)());
+        // Bai 22
+        console.log('Bai 22:');
+        yield (0, bai22_1.multipleTodos)();
+        // Bai 24
+        console.log('Bai 24:');
+        console.log(yield (0, bai24_1.postData)());
+        // Bai 25
+        console.log('Bai 25:');
+        yield (0, bai25_1.downloadFile)();
+        // Bai 23
+        console.log('Bai 23:');
+        console.log(yield (0, bai23_1.filterTodos)());
     });
 }
 main().catch((error) => console.error("Main error:", error));

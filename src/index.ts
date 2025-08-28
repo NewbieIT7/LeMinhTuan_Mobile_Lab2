@@ -11,6 +11,11 @@ import { fetchUser } from './bai18';
 import { fetchUsers } from './bai19';
 import { getTen } from './bai2';
 import { fetchWithTimeout } from './bai20';
+import { getTodo } from './bai21';
+import { multipleTodos } from './bai22';
+import { filterTodos } from './bai23';
+import { postData } from './bai24';
+import { downloadFile } from './bai25';
 import { rejectError } from './bai3';
 import { randomPromise } from './bai4';
 import { simulateTask } from './bai5';
@@ -108,6 +113,26 @@ async function main() {
   } catch (error) {
     console.log('Error:', error);
   }
+
+  // Bai 21
+  console.log('Bai 21:');
+  console.log(await getTodo());
+
+  // Bai 22
+  console.log('Bai 22:');
+  await multipleTodos();
+
+  // Bai 24
+  console.log('Bai 24:');
+  console.log(await postData());
+
+  // Bai 25
+  console.log('Bai 25:');
+  await downloadFile();
+
+  // Bai 23
+  console.log('Bai 23:');
+  console.log(await filterTodos());
 }
 
 main().catch((error) => console.error("Main error:", error));
