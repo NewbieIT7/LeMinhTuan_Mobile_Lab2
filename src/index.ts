@@ -1,5 +1,10 @@
 import { helloPromise } from './bai1';
 import { finallyPromise } from './bai10';
+import { asyncHello } from './bai11';
+import { runTask } from './bai12';
+import { handleError } from './bai13';
+import { triple } from './bai14';
+import { sequentialCalls } from './bai15';
 import { getTen } from './bai2';
 import { rejectError } from './bai3';
 import { randomPromise } from './bai4';
@@ -54,6 +59,26 @@ async function main() {
   // Bai 10
   console.log('Bai 10:');
   await finallyPromise.then((result) => console.log(result));
+
+  // Bai 11
+  console.log('Bai 11:');
+  console.log(await asyncHello());
+
+  // Bai 12
+  console.log('Bai 12:');
+  await runTask();
+
+  // Bai 13
+  console.log('Bai 13:');
+  await handleError();
+
+  // Bai 14
+  console.log('Bai 14:');
+  console.log(await triple(5));
+
+  // Bai 15
+  console.log('Bai 15:');
+  await sequentialCalls();
 }
 
 main().catch((error) => console.error("Main error:", error));

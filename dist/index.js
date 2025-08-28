@@ -11,6 +11,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 const bai1_1 = require("./bai1");
 const bai10_1 = require("./bai10");
+const bai11_1 = require("./bai11");
+const bai12_1 = require("./bai12");
+const bai13_1 = require("./bai13");
+const bai14_1 = require("./bai14");
+const bai15_1 = require("./bai15");
 const bai2_1 = require("./bai2");
 const bai3_1 = require("./bai3");
 const bai4_1 = require("./bai4");
@@ -56,6 +61,21 @@ function main() {
         // Bai 10
         console.log('Bai 10:');
         yield bai10_1.finallyPromise.then((result) => console.log(result));
+        // Bai 11
+        console.log('Bai 11:');
+        console.log(yield (0, bai11_1.asyncHello)());
+        // Bai 12
+        console.log('Bai 12:');
+        yield (0, bai12_1.runTask)();
+        // Bai 13
+        console.log('Bai 13:');
+        yield (0, bai13_1.handleError)();
+        // Bai 14
+        console.log('Bai 14:');
+        console.log(yield (0, bai14_1.triple)(5));
+        // Bai 15
+        console.log('Bai 15:');
+        yield (0, bai15_1.sequentialCalls)();
     });
 }
 main().catch((error) => console.error("Main error:", error));
